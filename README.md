@@ -10,7 +10,7 @@ and hopefully otherwise modernise.
 
 Propose this is released under this license:
 
-(Apache License, Version 2.0)[http://www.apache.org/licenses/LICENSE-2.0.html]
+[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 However, the original code is provided without license, which would imply copyright and non
 OSS by default. Of course, it is massively to the benefit of IntelliSMS to have a 
