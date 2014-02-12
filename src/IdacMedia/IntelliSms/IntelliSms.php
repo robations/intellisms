@@ -177,11 +177,11 @@ class IntelliSms
     {
         try {
             $response = $this->IntelliSMS_MakeHTTPRequestUsingGateway(1, $data, $urlpath);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             try {
                 //Try backup gateway SMSGateway
                 $response = $this->IntelliSMS_MakeHTTPRequestUsingGateway(2, $data, $urlpath);
-            } catch (Exception $e2) {
+            } catch (\Exception $e2) {
                 //Throw first exception
                 throw $e;
             }
@@ -199,7 +199,7 @@ class IntelliSms
             if ($gatewayid == 2) {
                 $gatewayurl = $this->BackupGateway . $urlpath;
             } else {
-                throw new Exception("Gateway Id invalid $gatewayid");
+                throw new \Exception("Gateway Id invalid $gatewayid");
             }
         }
 
@@ -295,12 +295,12 @@ class IntelliSms
 
         $fp = @fopen($url, 'rb', false, $ctx);
         if (!$fp) {
-            throw new Exception("Problem making HTTP request $url, $php_errormsg");
+            throw new \Exception("Problem making HTTP request $url, $php_errormsg");
         }
 
         $response = @stream_get_contents($fp);
         if ($response === false) {
-            throw new Exception("Problem reading HTTP Response $url, $php_errormsg");
+            throw new \Exception("Problem reading HTTP Response $url, $php_errormsg");
         }
 
         return $response;
