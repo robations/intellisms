@@ -214,7 +214,7 @@ class IntelliSms
 
         $SendStatusCollection = array();
 
-        $msgresponses = split("\n", $response);
+        $msgresponses = explode("\n", $response);
 
         $idx = 0;
 
@@ -222,7 +222,7 @@ class IntelliSms
             $msgresponse = trim($msgresponse);
 
             if (strlen($msgresponse) > 0) {
-                $msgresponseparts = split(",", $msgresponse);
+                $msgresponseparts =  explode(",", $msgresponse);
 
                 $msisdn = null;
                 $msgid = null;
@@ -232,7 +232,7 @@ class IntelliSms
                     $msisdn = $msgresponseparts[0];
                     $msgresult = $msgresponseparts[1];
                 } else {
-                    if (count(split(",", $to)) == 1) {
+                    if (count(explode(",", $to)) == 1) {
                         $msisdn = $to;
                     } else {
                         $msisdn = "";
